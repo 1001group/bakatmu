@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tunjukkan Bakatmu - Buku Online Pengembangan Diri</title>
+
+  <meta name="description" content="Tunjukkan Bakatmu adalah buku online inspiratif tentang cara mengenali potensi diri, melatih kemampuan, membangun percaya diri, dan berani menunjukkan bakat kepada dunia.">
+  <meta name="keywords" content="tunjukkan bakatmu, buku online, pengembangan diri, motivasi, percaya diri, potensi diri, inspirasi hidup, bakat, karya">
+  <meta name="author" content="Tunjukkan Bakatmu">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Tunjukkan Bakatmu - Buku Online Pengembangan Diri">
+  <meta property="og:description" content="Buku online inspiratif untuk membantu kamu mengenali potensi diri, melatih kemampuan, dan berani berkarya.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tunjukkanbakatmu.vercel.app/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80">
+
+  <link rel="canonical" href="https://tunjukkanbakatmu.vercel.app/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #1f2937;
+      background: #f8fafc;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .tb-container {
+      width: 92%;
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .tb-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+
+    .tb-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .tb-logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #2563eb;
+    }
+
+    .tb-menu {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tb-menu a {
+      color: #374151;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .tb-menu a:hover {
+      color: #2563eb;
+    }
+
+    .tb-hero {
+      background:
+        linear-gradient(rgba(30, 64, 175, 0.78), rgba(20, 83, 45, 0.72)),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 115px 20px;
+      text-align: center;
+    }
+
+    .tb-hero h1 {
+      font-size: 54px;
+      margin: 0 0 18px;
+      line-height: 1.15;
+    }
+
+    .tb-hero p {
+      font-size: 19px;
+      max-width: 780px;
+      margin: 0 auto 30px;
+      color: #eef2ff;
+    }
+
+    .tb-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #2563eb;
+      padding: 14px 30px;
+      border-radius: 999px;
+      font-weight: 800;
+      margin: 6px;
+      transition: 0.3s;
+    }
+
+    .tb-btn:hover {
+      transform: translateY(-3px);
+      background: #dbeafe;
+    }
+
+    .tb-btn-dark {
+      background: #16a34a;
+      color: #ffffff;
+    }
+
+    .tb-btn-dark:hover {
+      background: #15803d;
+    }
+
+    .tb-section {
+      padding: 75px 0;
+    }
+
+    .tb-title {
+      text-align: center;
+      font-size: 38px;
+      color: #1e40af;
+      margin: 0 0 14px;
+    }
+
+    .tb-subtitle {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 45px;
+      color: #4b5563;
+      font-size: 17px;
+    }
+
+    .tb-info {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: -45px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tb-info-card {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .tb-info-card strong {
+      display: block;
+      font-size: 22px;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+
+    .tb-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .tb-image {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+    }
+
+    .tb-text h2 {
+      font-size: 34px;
+      color: #111827;
+      margin: 0 0 16px;
+    }
+
+    .tb-text p {
+      color: #4b5563;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .tb-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .tb-card {
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: 0.3s;
+    }
+
+    .tb-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .tb-icon {
+      width: 54px;
+      height: 54px;
+      background: #dbeafe;
+      color: #1e40af;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 18px;
+      font-weight: bold;
+    }
+
+    .tb-card h3 {
+      color: #111827;
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    .tb-card p {
+      color: #4b5563;
+      margin: 0;
+    }
+
+    .tb-toc {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+      border: 1px solid #e5e7eb;
+    }
+
+    .tb-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .tb-toc-list li {
+      background: #f1f5f9;
+      border-left: 5px solid #16a34a;
+      padding: 16px 18px;
+      border-radius: 14px;
+    }
+
+    .tb-toc-list a {
+      color: #1f2937;
+      font-weight: 700;
+    }
+
+    .tb-toc-list a:hover {
+      color: #2563eb;
+    }
+
+    .tb-chapter {
+      background: #ffffff;
+      padding: 34px;
+      border-radius: 24px;
+      margin-bottom: 28px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .tb-chapter h3 {
+      font-size: 28px;
+      color: #1e40af;
+      margin: 0 0 16px;
+    }
+
+    .tb-chapter p {
+      color: #4b5563;
+      margin-bottom: 14px;
+    }
+
+    .tb-quote {
+      background: #ecfdf5;
+      border-left: 6px solid #16a34a;
+      padding: 20px;
+      border-radius: 14px;
+      font-style: italic;
+      color: #166534;
+      margin-top: 20px;
+    }
+
+    .tb-activity {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      padding: 20px;
+      border-radius: 16px;
+      margin-top: 20px;
+    }
+
+    .tb-activity strong {
+      color: #b45309;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .tb-author {
+      background: linear-gradient(135deg, #1e40af, #16a34a);
+      color: #ffffff;
+      padding: 55px;
+      border-radius: 28px;
+      text-align: center;
+    }
+
+    .tb-author h2 {
+      font-size: 34px;
+      margin: 0 0 14px;
+    }
+
+    .tb-author p {
+      max-width: 780px;
+      margin: auto;
+      color: #eef2ff;
+    }
+
+    .tb-faq {
+      background: #ffffff;
+      padding: 26px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .tb-faq h3 {
+      margin: 0 0 8px;
+      color: #111827;
+      font-size: 21px;
+    }
+
+    .tb-faq p {
+      margin: 0;
+      color: #4b5563;
+    }
+
+    .tb-cta {
+      background:
+        linear-gradient(rgba(17,24,39,0.72), rgba(17,24,39,0.72)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 80px 20px;
+      border-radius: 28px;
+      text-align: center;
+    }
+
+    .tb-cta h2 {
+      font-size: 40px;
+      margin: 0 0 16px;
+    }
+
+    .tb-cta p {
+      max-width: 750px;
+      margin: 0 auto 26px;
+      color: #f3f4f6;
+    }
+
+    .tb-footer {
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 35px 20px;
+      margin-top: 60px;
+    }
+
+    .tb-footer strong {
+      color: #ffffff;
+    }
+
+    @media (max-width: 900px) {
+      .tb-navbar {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .tb-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .tb-hero h1 {
+        font-size: 38px;
+      }
+
+      .tb-grid-2,
+      .tb-info,
+      .tb-cards,
+      .tb-toc-list {
+        grid-template-columns: 1fr;
+      }
+
+      .tb-info {
+        margin-top: 25px;
+      }
+
+      .tb-title {
+        font-size: 30px;
+      }
+
+      .tb-author {
+        padding: 35px 22px;
+      }
+
+      .tb-cta h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="tb-header">
+    <div class="tb-container tb-navbar">
+      <div class="tb-logo">Tunjukkan Bakatmu</div>
+      <ul class="tb-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#manfaat">Manfaat</a></li>
+        <li><a href="#daftarisi">Daftar Isi</a></li>
+        <li><a href="#baca">Baca Buku</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="tb-hero" id="home">
+    <div class="tb-container">
+      <h1>Tunjukkan Bakatmu Kepada Dunia</h1>
+      <p>
+        Buku online inspiratif untuk membantu kamu mengenali potensi diri,
+        melatih kemampuan, membangun kepercayaan diri, dan berani berkarya.
+      </p>
+      <a href="#baca" class="tb-btn">Mulai Membaca</a>
+      <a href="#daftarisi" class="tb-btn tb-btn-dark">Lihat Daftar Isi</a>
+    </div>
+  </section>
+
+  <div class="tb-container">
+    <div class="tb-info">
+      <div class="tb-info-card">
+        <strong>5 Bab</strong>
+        Materi ringan dan mudah dipahami
+      </div>
+      <div class="tb-info-card">
+        <strong>Online</strong>
+        Bisa dibaca kapan saja
+      </div>
+      <div class="tb-info-card">
+        <strong>Motivasi</strong>
+        Cocok untuk pengembangan diri
+      </div>
+      <div class="tb-info-card">
+        <strong>Gratis</strong>
+        Inspirasi untuk semua pembaca
+      </div>
+    </div>
+  </div>
+
+  <section class="tb-section" id="tentang">
+    <div class="tb-container">
+      <div class="tb-grid-2">
+        <div>
+          <img class="tb-image" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="Tunjukkan bakatmu">
+        </div>
+        <div class="tb-text">
+          <h2>Tentang Buku Ini</h2>
+          <p>
+            Setiap orang memiliki bakat, tetapi tidak semua orang berani menunjukkannya.
+            Ada yang takut gagal, takut dinilai, atau merasa belum cukup hebat.
+          </p>
+          <p>
+            Buku online <strong>Tunjukkan Bakatmu</strong> dibuat untuk mengingatkan bahwa
+            bakat tidak harus langsung sempurna. Bakat bisa tumbuh dari keberanian mencoba,
+            latihan kecil, dan konsistensi setiap hari.
+          </p>
+          <p>
+            Melalui buku ini, pembaca diajak mengenal diri sendiri, menemukan potensi,
+            melatih kemampuan, dan mulai berani menampilkan karya kepada orang lain.
+          </p>
+          <a href="#baca" class="tb-btn tb-btn-dark">Baca Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tb-section" id="manfaat">
+    <div class="tb-container">
+      <h2 class="tb-title">Manfaat Membaca Buku Ini</h2>
+      <p class="tb-subtitle">
+        Buku ini cocok untuk siapa saja yang ingin lebih percaya diri dan mulai mengembangkan potensi terbaiknya.
+      </p>
+
+      <div class="tb-cards">
+        <div class="tb-card">
+          <div class="tb-icon">★</div>
+          <h3>Mengenal Potensi Diri</h3>
+          <p>
+            Membantu kamu memahami hal yang kamu sukai, kemampuan yang kamu miliki,
+            dan bidang yang bisa kamu kembangkan.
+          </p>
+        </div>
+
+        <div class="tb-card">
+          <div class="tb-icon">✓</div>
+          <h3>Membangun Percaya Diri</h3>
+          <p>
+            Mengajak kamu untuk tidak takut memulai, tidak takut salah,
+            dan berani menunjukkan proses belajar.
+          </p>
+        </div>
+
+        <div class="tb-card">
+          <div class="tb-icon">→</div>
+          <h3>Berani Berkarya</h3>
+          <p>
+            Memberikan dorongan agar kamu mulai membuat karya sederhana
+            dan membagikannya kepada dunia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tb-section" id="daftarisi">
+    <div class="tb-container">
+      <h2 class="tb-title">Daftar Isi</h2>
+      <p class="tb-subtitle">
+        Pilih bab yang ingin kamu baca. Setiap bab berisi motivasi, arahan, dan latihan kecil.
+      </p>
+
+      <div class="tb-toc">
+        <ul class="tb-toc-list">
+          <li><a href="#bab1">Bab 1 - Mengenal Diri Sendiri</a></li>
+          <li><a href="#bab2">Bab 2 - Menemukan Bakat Tersembunyi</a></li>
+          <li><a href="#bab3">Bab 3 - Melatih Kemampuan Setiap Hari</a></li>
+          <li><a href="#bab4">Bab 4 - Berani Tampil dan Berkarya</a></li>
+          <li><a href="#bab5">Bab 5 - Konsisten Sampai Dikenal</a></li>
+          <li><a href="#penutup">Penutup - Saatnya Menunjukkan Bakatmu</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="tb-section" id="baca">
+    <div class="tb-container">
+      <h2 class="tb-title">Baca Buku Online</h2>
+      <p class="tb-subtitle">
+        Mulailah dari bab pertama dan ikuti setiap latihan kecil agar kamu lebih mengenal bakatmu.
+      </p>
+
+      <div class="tb-chapter" id="bab1">
+        <h3>Bab 1 - Mengenal Diri Sendiri</h3>
+        <p>
+          Langkah pertama untuk menunjukkan bakat adalah mengenal diri sendiri.
+          Banyak orang ingin sukses, tetapi belum memahami apa yang benar-benar mereka sukai.
+        </p>
+        <p>
+          Cobalah bertanya kepada diri sendiri: kegiatan apa yang membuatmu lupa waktu?
+          Hal apa yang sering dipuji orang lain darimu? Bidang apa yang membuatmu penasaran
+          untuk terus belajar?
+        </p>
+        <div class="tb-quote">
+          “Bakat bukan hanya tentang apa yang sudah kamu kuasai, tetapi juga tentang hal yang rela kamu pelajari berulang kali.”
+        </div>
+        <div class="tb-activity">
+          <strong>Latihan kecil:</strong>
+          Tulis 5 hal yang kamu sukai, 5 hal yang mudah kamu lakukan, dan 5 hal yang ingin kamu pelajari lebih serius.
+        </div>
+      </div>
+
+      <div class="tb-chapter" id="bab2">
+        <h3>Bab 2 - Menemukan Bakat Tersembunyi</h3>
+        <p>
+          Tidak semua bakat terlihat sejak kecil. Ada bakat yang baru muncul ketika seseorang
+          berani mencoba hal baru. Mungkin kamu berbakat menulis, berbicara, menggambar,
+          membuat video, memasak, berdagang, mendesain, mengajar, atau memimpin.
+        </p>
+        <p>
+          Jangan terlalu cepat berkata “aku tidak punya bakat”. Bisa jadi bakatmu belum terlihat
+          karena belum diberi ruang untuk tumbuh.
+        </p>
+        <div class="tb-activity">
+          <strong>Latihan kecil:</strong>
+          Pilih satu bidang yang ingin kamu coba selama 7 hari, lalu catat perkembanganmu setiap hari.
+        </div>
+      </div>
+
+      <div class="tb-chapter" id="bab3">
+        <h3>Bab 3 - Melatih Kemampuan Setiap Hari</h3>
+        <p>
+          Bakat tanpa latihan akan berhenti di tempat. Sebaliknya, kemampuan sederhana yang
+          dilatih setiap hari bisa menjadi sesuatu yang luar biasa.
+        </p>
+        <p>
+          Tidak perlu menunggu waktu sempurna. Latihan 15 sampai 30 menit setiap hari
+          sudah cukup untuk membentuk kebiasaan dan meningkatkan kemampuan.
+        </p>
+        <div class="tb-quote">
+          “Konsistensi kecil hari ini bisa menjadi kemampuan besar di masa depan.”
+        </div>
+        <div class="tb-activity">
+          <strong>Latihan kecil:</strong>
+          Buat jadwal latihan sederhana selama 30 hari sesuai bakat yang ingin kamu kembangkan.
+        </div>
+      </div>
+
+      <div class="tb-chapter" id="bab4">
+        <h3>Bab 4 - Berani Tampil dan Berkarya</h3>
+        <p>
+          Salah satu tantangan terbesar dalam menunjukkan bakat adalah rasa takut.
+          Takut gagal, takut dikomentari, takut dibandingkan, atau takut belum sempurna.
+        </p>
+        <p>
+          Padahal karya pertama memang tidak harus sempurna. Dunia tidak akan melihat bakatmu
+          jika kamu terus menyimpannya sendiri.
+        </p>
+        <div class="tb-activity">
+          <strong>Latihan kecil:</strong>
+          Buat satu karya sederhana hari ini dan bagikan kepada satu orang yang kamu percaya.
+        </div>
+      </div>
+
+      <div class="tb-chapter" id="bab5">
+        <h3>Bab 5 - Konsisten Sampai Dikenal</h3>
+        <p>
+          Bakat yang terlihat biasanya lahir dari proses panjang. Tidak semua orang langsung
+          mendapat perhatian. Namun orang yang terus belajar dan terus berkarya akan semakin berkembang.
+        </p>
+        <p>
+          Konsistensi adalah jembatan antara potensi dan keberhasilan. Ketika kamu terus menunjukkan
+          karya, orang akan mulai mengenal gaya dan kemampuanmu.
+        </p>
+        <div class="tb-quote">
+          “Jangan berhenti hanya karena belum dilihat banyak orang. Teruslah berkarya sampai kemampuanmu berbicara sendiri.”
+        </div>
+        <div class="tb-activity">
+          <strong>Latihan kecil:</strong>
+          Tentukan target 30 hari, misalnya membuat 10 tulisan, 10 desain, 10 video, atau 10 latihan sesuai bidangmu.
+        </div>
+      </div>
+
+      <div class="tb-chapter" id="penutup">
+        <h3>Penutup - Saatnya Menunjukkan Bakatmu</h3>
+        <p>
+          Menunjukkan bakat bukan tentang menjadi paling hebat, tetapi tentang berani menjadi diri sendiri.
+          Setiap orang punya waktu tumbuh yang berbeda. Jangan bandingkan prosesmu dengan orang lain.
+        </p>
+        <p>
+          Fokuslah pada langkah kecil yang bisa kamu lakukan hari ini. Selama kamu terus belajar,
+          berlatih, dan berani berkarya, bakatmu akan menemukan jalannya sendiri.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tb-section">
+    <div class="tb-container">
+      <div class="tb-author">
+        <h2>Pesan untuk Pembaca</h2>
+        <p>
+          Jangan menunggu sampai semuanya sempurna untuk mulai menunjukkan bakatmu.
+          Mulailah dari hal kecil, lakukan dengan hati, dan terus berkembang setiap hari.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tb-section">
+    <div class="tb-container">
+      <h2 class="tb-title">Pertanyaan Umum</h2>
+      <p class="tb-subtitle">
+        Beberapa pertanyaan sederhana tentang buku online ini.
+      </p>
+
+      <div class="tb-faq">
+        <h3>Apakah buku ini cocok untuk pemula?</h3>
+        <p>
+          Ya, buku ini dibuat dengan bahasa sederhana agar mudah dipahami oleh siapa saja.
+        </p>
+      </div>
+
+      <div class="tb-faq">
+        <h3>Apakah harus punya bakat dulu untuk membaca buku ini?</h3>
+        <p>
+          Tidak. Justru buku ini membantu pembaca mengenali dan menemukan potensi yang mungkin belum terlihat.
+        </p>
+      </div>
+
+      <div class="tb-faq">
+        <h3>Apa tujuan utama buku ini?</h3>
+        <p>
+          Tujuannya adalah memberi motivasi agar pembaca lebih percaya diri, mau belajar, dan berani berkarya.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tb-section">
+    <div class="tb-container">
+      <div class="tb-cta">
+        <h2>Mulai Tunjukkan Bakatmu Hari Ini</h2>
+        <p>
+          Jangan simpan kemampuanmu terlalu lama. Ambil langkah kecil, mulai belajar,
+          buat karya pertama, dan biarkan dunia melihat prosesmu.
+        </p>
+        <a href="#baca" class="tb-btn">Mulai dari Bab 1</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="tb-footer">
+    <p><strong>Tunjukkan Bakatmu</strong></p>
+    <p>Buku Online Pengembangan Diri</p>
+    <p>© 2026 - Dibuat untuk menginspirasi setiap orang agar berani berkarya.</p>
+  </footer>
+
+</body>
+</html>
